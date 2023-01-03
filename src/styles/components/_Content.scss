@@ -1,0 +1,29 @@
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+  height: calc(100% - var(--header-height));
+
+  position: absolute;
+  top: var(--header-height);
+
+  .content-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .content-query-panel {
+    display: flex;
+
+    width: var(--query-panel-width);
+
+    right: 0;
+
+    border-left: solid 1px rgba($color: black, $alpha: 0.1);
+  }
+}

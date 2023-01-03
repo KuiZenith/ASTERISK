@@ -1,0 +1,26 @@
+.header-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: var(--header-height);
+
+  position: fixed;
+
+  background-color: var(--color-2);
+
+  opacity: 0.8;
+
+  span {
+    @extend %text-title;
+
+    color: var(--color-6);
+
+    user-select: none;
+
+    &:hover {
+      color: var(--color-7);
+    }
+  }
+}

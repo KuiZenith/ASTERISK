@@ -1,0 +1,231 @@
+[
+  {
+    "courseType": "A",
+    "credit": 2,
+    "courseName": "從頭說故事-敘事法概論",
+    "EnglishName": "Introduction to Storytelling",
+    "department": "應藝所、故事工坊",
+    "history": {
+      "108": "A",
+      "109": "A",
+      "110": "A",
+      "111": "A"
+    },
+    "memos": [
+      "108學年度A類",
+      "109學年度A類",
+      "110學年度A類",
+      "111學年度A類"
+    ]
+  },
+  {
+    "courseType": "A",
+    "credit": 2,
+    "courseName": "數位影像基礎與實作",
+    "EnglishName": "Introduction to Digital Filmmaking",
+    "department": "通識中心",
+    "history": {
+      "108": "A",
+      "109": "A",
+      "110": "A",
+      "111": "A"
+    },
+    "memos": [
+      "108學年度A類",
+      "109學年度A類",
+      "110學年度A類",
+      "111學年度A類"
+    ]
+  },
+  {
+    "courseType": "A",
+    "credit": 2,
+    "courseName": "性別與電影",
+    "EnglishName": "Gender, Sexuality and Cinema",
+    "department": "通識中心",
+    "history": {
+      "109": "A",
+      "110": "A",
+      "111": "A"
+    },
+    "memos": [
+      "108學年度A類",
+      "109學年度A類",
+      "110學年度A類",
+      "111學年度A類",
+      "109學年度新增"
+    ]
+  },
+  {
+    "courseType": "A",
+    "credit": 2,
+    "courseName": "故事分鏡",
+    "EnglishName": "Introduction to Storyboard",
+    "department": "應藝所、故事工坊",
+    "history": {
+      "108": "A",
+      "109": "A",
+      "110": "A",
+      "111": "A"
+    },
+    "memos": [
+      "108學年度A類",
+      "109學年度A類",
+      "110學年度A類",
+      "111學年度A類"
+    ]
+  },
+  {
+    "courseType": "A",
+    "credit": 2,
+    "courseName": "生命故事探索",
+    "EnglishName": "Explore Your Stories of Inner Life",
+    "department": "應藝所",
+    "history": {
+      "108": "A",
+      "109": "A",
+      "110": "A",
+      "111": "A"
+    },
+    "memos": [
+      "108學年度A類",
+      "109學年度A類",
+      "110學年度A類",
+      "111學年度A類"
+    ]
+  },
+  {
+    "courseType": "A",
+    "credit": 2,
+    "courseName": "創意文案與故事腳本",
+    "EnglishName": "Creative Writing and Scripting",
+    "department": "人社院、佼佼者工坊",
+    "history": {
+      "108": "A",
+      "109": "A",
+      "110": "A",
+      "111": "A"
+    },
+    "memos": [
+      "108學年度A類",
+      "109學年度A類",
+      "110學年度A類",
+      "111學年度A類"
+    ]
+  },
+  {
+    "courseType": "A",
+    "credit": 2,
+    "courseName": "口語傳播與自我展演",
+    "EnglishName": "Speech Communication and Self-performance",
+    "department": "人社院、佼佼者工坊",
+    "history": {
+      "108": "A",
+      "109": "A",
+      "110": "A",
+      "111": "A"
+    },
+    "memos": [
+      "108學年度A類",
+      "109學年度A類",
+      "110學年度A類",
+      "111學年度A類"
+    ]
+  },
+  {
+    "courseType": "A",
+    "credit": 2,
+    "courseName": "藝術心理學",
+    "EnglishName": "Psychology of Art",
+    "department": "人社院",
+    "history": {
+      "109": "A",
+      "110": "A",
+      "111": "A"
+    },
+    "memos": [
+      "109學年度A類",
+      "110學年度A類",
+      "111學年度A類",
+      "109學年度新增"
+    ]
+  },
+  {
+    "courseType": "A",
+    "credit": 2,
+    "courseName": "故事與情境設計",
+    "EnglishName": "Story and Scenario Design",
+    "department": "傳播所",
+    "history": {
+      "109": "A",
+      "110": "A",
+      "111": "A"
+    },
+    "memos": [
+      "109學年度A類",
+      "110學年度A類",
+      "111學年度A類",
+      "109學年度新增"
+    ]
+  },
+  {
+    "courseType": "A",
+    "credit": 2,
+    "courseName": "推測設計與說故事",
+    "EnglishName": "Speculative Design and Storytelling",
+    "department": "人社院",
+    "history": {
+      "109": "A",
+      "110": "A",
+      "111": "A"
+    },
+    "memos": [
+      "109學年度A類",
+      "110學年度A類",
+      "111學年度A類",
+      "109學年度新增"
+    ]
+  },
+  {
+    "courseType": "A",
+    "credit": 3,
+    "courseName": "多媒體人機互動概論",
+    "EnglishName": "Introduction to Human-computer Interaction Design",
+    "department": "傳播所",
+    "history": {
+      "111": "A"
+    },
+    "memos": [
+      "111學年度A類",
+      "111學年度新增"
+    ]
+  },
+  {
+    "courseType": "A",
+    "credit": 2,
+    "courseName": "視覺敘事中的時空再現",
+    "EnglishName": "Representation of Time-Space in Visual Narratives",
+    "department": "人社院",
+    "history": {
+      "111": "A"
+    },
+    "memos": [
+      "111學年度A類",
+      "111學年度新增"
+    ]
+  },
+  {
+    "courseType": "A",
+    "credit": 2,
+    "courseName": "文化與創意設計",
+    "EnglishName": "Cultural and creative design",
+    "department": "人社院",
+    "history": {
+      "111": "A"
+    },
+    "memos": [
+      "111學年度A類",
+      "111學年度新增"
+    ]
+  }
+]

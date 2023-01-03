@@ -1,0 +1,22 @@
+%text-icon {
+  font-weight: bold;
+  font-size: var(--text-icon);
+
+  transition: 0.3s;
+  cursor: pointer;
+  user-select: none;
+}
+
+%text-title {
+  font-family: "NotoSansMono";
+  font-weight: bold;
+  font-size: var(--text-title);
+
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+%text-normal {
+  font-family: "NotoSansMono";
+  font-size: var(--text-normal);
+}

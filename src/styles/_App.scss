@@ -1,0 +1,12 @@
+@each $theme, $theme-values in $themes {
+  @each $scale, $scale-values in $scales {
+    #app[theme=#{$theme}][scale=#{$scale}] {
+      @each $serial, $color in $theme-values {
+        --color-#{$serial}: #{$color};
+      }
+      @each $name, $size in $scale-values {
+        --#{$name}: #{$size};
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+.deckview-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+
+  padding: 20px;
+
+  position: relative;
+
+  .card-wrapper {
+    display: flex;
+
+    padding: 10px;
+
+    width: 100%;
+    height: var(--card-max-height);
+    max-width: var(--card-max-width);
+    max-height: var(--card-max-height);
+
+    perspective: 1000px;
+
+    &.flipped .card-interior {
+      transform: rotateX(180deg);
+    }
+
+    .card-interior {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+
+      position: relative;
+
+      background-color: var(--color-3);
+
+      border-radius: 10px;
+
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+      cursor: pointer;
+
+      .card-front, .card-back {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        position: absolute;
+
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+
+        h3 {
+          @extend %text-title;
+
+          color: var(--color-7);
+        }
+      }
+
+      .card-back {
+        @extend %text-normal;
+
+        color: var(--color-7);
+        text-align: center;
+
+        transform: rotateX(180deg);
+
+        ol li {
+          cursor: text;
+        }
+      }
+    }
+  }
+}

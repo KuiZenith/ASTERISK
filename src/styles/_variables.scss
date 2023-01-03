@@ -1,0 +1,87 @@
+$scales: (
+  "sm": (
+    "navrail-width": 40px,
+    "sidebar-width": 240px,
+    "query-panel-width": 240px,
+    "card-max-width": 400px,
+
+    "header-height": 40px,
+    "list-item-height": 30px,
+    "card-max-height": 300px,
+
+    "sidebar-toggler-width": 40px,
+    "sidebar-toggler-height": 30px,
+    "list-toggler-width": 10px,
+    "list-toggler-height": 10px,
+
+    "logo-size": 40px,
+
+    "text-icon": 24px,
+    "text-title": 20px,
+    "text-normal": 16px
+  ),
+  "md": (
+    "navrail-width": 60px,
+    "sidebar-width": 300px,
+    "query-panel-width": 300px,
+    "card-max-width": 500px,
+
+    "header-height": 60px,
+    "list-item-height": 40px,
+    "card-max-height": 360px,
+
+    "sidebar-toggler-width": 50px,
+    "sidebar-toggler-height": 40px,
+    "list-toggler-width": 15px,
+    "list-toggler-height": 15px,
+
+    "logo-size": 60px,
+
+    "text-icon": 30px,
+    "text-title": 24px,
+    "text-normal": 18px
+  ),
+  "lg": (
+    "navrail-width": 80px,
+    "sidebar-width": 360px,
+    "query-panel-width": 360px,
+    "card-max-width": 600px,
+
+    "header-height": 80px,
+    "list-item-height": 50px,
+    "card-max-height": 420px,
+
+    "sidebar-toggler-width": 60px,
+    "sidebar-toggler-height": 50px,
+    "list-toggler-width": 15px,
+    "list-toggler-height": 15px,
+
+    "logo-size": 80px,
+
+    "text-icon": 36px,
+    "text-title": 30px,
+    "text-normal": 24px
+  )
+);
+
+
+
+$themes: (
+  "claret": (
+    0: black,
+    1: #78281F,
+    2: #B03A2E,
+    3: #E74C3C,
+    4: #EC7063,
+    5: #F5B7B1,
+    6: #FDEDEC,
+    7: white
+  )
+);
+
+
+
+@font-face {
+  font-family: "NotoSansMono";
+  src: url(../assets/fonts/NotoSansMonoCJKtc-Regular.otf);
+}
