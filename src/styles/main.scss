@@ -28,6 +28,14 @@ body {
 
 
 
+a {
+  color: unset;
+
+  text-decoration: none;
+}
+
+
+
 ::-webkit-scrollbar {
   width: 10px;
 }

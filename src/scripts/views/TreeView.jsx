@@ -5,7 +5,7 @@ export default function TreeView({ tree }) {
       <ul style={{
         overflow: "auto"
       }}>
-        {tree.length && tree.map(child => {
+        {tree.length !== 0 && tree.map(child => {
           return <TreeNode key={index++} node={child} />
         })}
       </ul>
@@ -21,10 +21,12 @@ function TreeNode({ node }) {
     <li className={`node-wrapper ${isExpanded ? "expanded" : "collapsed"}`} style={{
       height: `calc(${isExpanded && hasChild ? node.children.length + 1 : 1} * var(--list-item-height))`
     }}>
-      <div className="node-title" onClick={() => setIsExpanded(!isExpanded)}>
-        {hasChild && (isExpanded ? <i className="fa-sharp fa-solid fa-caret-down"></i> : <i className="fa-solid fa-caret-right"></i>)}
-        <span>{node.title}</span>
-      </div>
+      <ReactRouterDOM.Link to={node.url ? node.url : ""}>
+        <div className="node-title" onClick={() => setIsExpanded(!isExpanded)}>
+          {hasChild && (isExpanded ? <i className="fa-sharp fa-solid fa-caret-down"></i> : <i className="fa-solid fa-caret-right"></i>)}
+          <span>{node.title}</span>
+        </div>
+      </ReactRouterDOM.Link>
       {hasChild && <ul>
         {node.children.map(child => {
           return <TreeNode key={index++} node={child} />
