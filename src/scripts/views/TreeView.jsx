@@ -22,7 +22,7 @@ function TreeNode({ node }) {
       height: `calc(${isExpanded && hasChild ? node.children.length + 1 : 1} * var(--list-item-height))`
     }}>
       <ReactRouterDOM.Link to={node.url ? node.url : ""}>
-        <div className="node-title" onClick={() => setIsExpanded(!isExpanded)}>
+        <div className={`node-title ${hasChild ? "has-child" : "no-child"}`} onClick={() => setIsExpanded(!isExpanded)}>
           {hasChild && (isExpanded ? <i className="fa-sharp fa-solid fa-caret-down"></i> : <i className="fa-solid fa-caret-right"></i>)}
           <span>{node.title}</span>
         </div>

@@ -45,6 +45,10 @@
         background-color: var(--color-3);
       }
 
+      &.no-child {
+        padding-left: 0.5em;
+      }
+
       i {
         display: flex;
         justify-content: center;

@@ -1,0 +1,44 @@
+.history-info-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+
+  .history-info-title {
+    @extend %text-heading;
+
+    display: flex;
+    justify-content: center;
+
+    height: var(--header-height);
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+  .history-info-content {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    overflow-y: auto;
+
+    canvas {
+      max-width: 800px;
+      max-height: 600px;
+    }
+  }
+
+  .history-info-news {
+    display: flex;
+
+    width: var(--news-preview-width);
+
+    right: 0;
+
+    border-left: solid 1px rgba($color: black, $alpha: 0.1);
+  }
+}

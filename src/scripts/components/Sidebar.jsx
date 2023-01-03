@@ -1,27 +1,29 @@
 import TreeView from "../views/Treeview.jsx"
 
-export default function Sidebar({ companyData }) {
+export default function Sidebar() {
   const [isExpanded, setIsExpanded] = React.useState(true)
   const [companies, setCompanies] = React.useState([])
 
   React.useEffect(() => {
-    if (!companyData.length) return
-    console.log(companyData);
-    const companiesCopy = [...companies]
-    companyData.forEach(company => {
-      companiesCopy.push({
-        title: `${company.name} (${company.company_ID})`,
-        url: `${company.company_ID}`,
-        children: [
-          {
-            title: "歷史股價",
-            url: `${company.company_ID}/history`
-          }
-        ]
+    const fetchCompanies = async () => {
+      const companyData = await eel.select_company()()
+      const newCompanies = []
+      companyData.forEach(company => {
+        newCompanies.push({
+          title: `${company.name} (${company.company_id})`,
+          url: `${company.company_id}`,
+          children: [
+            {
+              title: "歷史股價",
+              url: `${company.company_id}/history`
+            }
+          ]
+        })
       })
-    })
-    setCompanies(companiesCopy)
-  }, [companyData])
+      setCompanies(newCompanies)
+    }
+    fetchCompanies()
+  }, [])
 
   return (
     <div className={`sidebar-wrapper ${isExpanded ? "expanded" : "collapsed"}`}>
@@ -35,7 +37,7 @@ export default function Sidebar({ companyData }) {
         <span>應用功能</span>
       </div>
       <div className="sidebar-list">
-        {companyData && <TreeView tree={companies} />}
+        {companies.length !== 0 && <TreeView tree={companies} />}
       </div>
     </div>
   )

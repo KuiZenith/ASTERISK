@@ -1,4 +1,7 @@
+import datetime
+
 import eel, psycopg2
+
 import psycopg2.extras as pe
 
 
@@ -21,11 +24,13 @@ def select_company():
   return [dict(record) for record in cursor.fetchall()]
 
 @eel.expose
-def select_price():
-  cursor.execute(f"SELECT * FROM price")
-  return [dict(record) for record in cursor.fetchall()]
+def select_price_within(company_id: str, date_range: list):
+  cursor.execute(f"SELECT * FROM price WHERE price.company_id = '{company_id}' and price.date BETWEEN '{date_range[0]}' AND '{date_range[1]}'")
+  results = [dict(record) for record in cursor.fetchall()]
+  for result in results: result["date"] = result["date"].strftime("%Y-%m-%d")
+  return results
 
 @eel.expose
-def select_news_within(start: str, end: str):
-  cursor.execute(f"SELECT * FROM report JOIN article ON report.link = article.link WHERE report.date BETWEEN '{start}' AND '{end}'")
+def select_news_within(company_id: str, date_range: list):
+  cursor.execute(f"SELECT * FROM report JOIN article ON report.link = article.link WHERE report.company_id = '{company_id}' and report.date BETWEEN '{date_range[0]}' AND '{date_range[1]}'")
   return [dict(record) for record in cursor.fetchall()]
