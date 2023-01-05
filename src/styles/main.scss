@@ -69,8 +69,6 @@ a {
 
 
 .predict-button {
-  @extend %text-title;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,5 +95,13 @@ a {
     background-color: var(--color-2);
   
     color: var(--color-7);
+  }
+
+  span {
+    @extend %text-title;
+  }
+
+  i {
+    font-size: var(--text-icon);
   }
 }

@@ -1,3 +1,5 @@
+import NewsReport from "../widgets/NewsReport.jsx"
+
 export default function HistoryInfo() {
   const { companyId } = ReactRouterDOM.useParams()
   const [dateRange, setDateRange] = React.useState(["2020-01-01", "2020-01-31"])
@@ -7,6 +9,9 @@ export default function HistoryInfo() {
   const [chart, setChart] = React.useState(null)
   const [predicted, setPredicted] = React.useState([])
   const [canPredict, setCanPredict] = React.useState(true)
+  const maxNewsLength = 20
+
+  let index = 0
 
   React.useEffect(() => {
     const fetchCompanies = async () => {
@@ -97,6 +102,8 @@ export default function HistoryInfo() {
     setCanPredict(true)
   }
 
+  const uniqueness = (value, index, self) => self.indexOf(self.find(record => record.title === value.title)) === index
+
   return (
     <div className="history-info-wrapper">
       <div style={{
@@ -108,7 +115,7 @@ export default function HistoryInfo() {
           <h1>{companies.length !== 0 && `${companies.find(company => company.company_id === companyId).name} (${companyId})`}</h1>
         </div>
         <div className="predict-button" onClick={() => predictPrices()}>
-          <span>預測</span>
+          {canPredict ? <span>預測</span> : <i className="fa-solid fa-ban"></i>}
         </div>
         <div className="history-info-content">
           <div>
@@ -116,7 +123,15 @@ export default function HistoryInfo() {
           </div>
         </div>
       </div>
-      <div className="history-info-news"></div>
+      <div style={{
+        display: "flex",
+        width: "var(--news-preview-width)",
+        position: "relative"
+      }}>
+        <div className="history-info-news">
+          {news.filter(uniqueness).slice(0, maxNewsLength).map(record => <NewsReport key={index++} record={record} />)}
+        </div>
+      </div>
     </div>
   )
 }
