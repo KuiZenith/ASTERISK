@@ -10,7 +10,7 @@
 @import "./views/TreeView";
 @import "./views/DeckView";
 
-@import "./widgets/HistoryInfo";
+@import "./pages/HistoryPage";
 
 
 
@@ -64,4 +64,38 @@ a {
   height: 100%;
 
   position: absolute;
+}
+
+
+
+.predict-button {
+  @extend %text-title;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 80px;
+  height: 80px;
+
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+
+  border: solid 5px var(--color-1);
+  border-radius: 50%;
+
+  background-color: var(--color-3);
+
+  color: var(--color-6);
+
+  cursor: pointer;
+
+  &:hover {
+    border: solid 5px var(--color-0);
+  
+    background-color: var(--color-2);
+  
+    color: var(--color-7);
+  }
 }

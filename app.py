@@ -1,11 +1,12 @@
 import eel
+
 import database
+import model
 
 
 
 def test():
-  print(database.select_news_within("2330", ["2020-01-01", "2020-01-01"]))
-  print(database.select_news_within("2330", ["2021-01-01", "2021-01-01"]))
+  print(model.model_predict("2330", ["2019-01-01", "2019-02-11"]))
 
 def close_callback(route, websockets):
   if not websockets:
