@@ -45,7 +45,7 @@ export default function HistoryInfo() {
     const graphPrices = []
     const begin = prices.indexOf(prices.find(p => new Date(p.date) > startDate)) - 1
     let index = 0
-    // console.log(prices);
+    console.log(prices);
     // console.log(prices[begin].date, begin);
     for (let day = 0; day < period; day++) {
       const newDate = new Date(startDate)
@@ -92,7 +92,7 @@ export default function HistoryInfo() {
       }
     })
     setChart(cht)
-  }, [dateRange, prices, predicted])
+  }, [prices, predicted])
 
   const predictPrices = async () => {
     if (!canPredict) return
@@ -100,6 +100,18 @@ export default function HistoryInfo() {
     const results = await eel.model_predict(companyId, dateRange)()
     setPredicted(results)
     setCanPredict(true)
+  }
+
+  const changeDateRange = days => {
+    const start = new Date()
+    const end = new Date()
+    start.setDate(start.getDate() - days)
+    setDateRange([start.toISOString().split("T")[0], end.toISOString().split("T")[0]])
+  }
+
+  const updateData = days => {
+    const update = async () => await eel.crawl_data(companyId)()
+    update()
   }
 
   const uniqueness = (value, index, self) => self.indexOf(self.find(record => record.title === value.title)) === index
@@ -118,9 +130,18 @@ export default function HistoryInfo() {
           {canPredict ? <span>預測</span> : <i className="fa-solid fa-ban"></i>}
         </div>
         <div className="history-info-content">
-          <div>
+          <div style={{
+            maxWidth: "600px",
+            maxHeight: "400px"
+          }}>
             <canvas id="price-graph" width="600px" height="400px"></canvas>
           </div>
+          {prices.length !== 0 && <div>
+            <button onClick={() => changeDateRange(7)}>最近一週</button>
+            <button onClick={() => changeDateRange(30)}>最近一月</button>
+            <button onClick={() => changeDateRange(365)}>最近一年</button>
+            <button onClick={() => updateData()}>更新資料</button>
+          </div>}
         </div>
       </div>
       <div style={{

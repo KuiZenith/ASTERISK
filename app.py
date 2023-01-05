@@ -2,11 +2,13 @@ import eel
 
 import database
 import model
+import update
 
 
 
 def test():
-  print(model.model_predict("2330", ["2019-01-01", "2019-02-11"]))
+  # print(model.model_predict("2330", ["2019-01-01", "2019-02-11"]))
+  update.crawl_data("2603")
 
 def close_callback(route, websockets):
   if not websockets:

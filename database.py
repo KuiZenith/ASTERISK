@@ -31,8 +31,21 @@ def select_price_within(company_id: str, date_range: list):
   return results
 
 @eel.expose
+def select_news_after(company_id: str, start: str):
+  cursor.execute(f"SELECT * FROM report JOIN article ON report.link = article.link WHERE report.company_id = '{company_id}' and report.date >= '{start}'")
+  results = [dict(record) for record in cursor.fetchall()]
+  for result in results: result["date"] = result["date"].strftime("%Y-%m-%d")
+  return results
+
+@eel.expose
 def select_news_within(company_id: str, date_range: list):
   cursor.execute(f"SELECT * FROM report JOIN article ON report.link = article.link WHERE report.company_id = '{company_id}' and report.date BETWEEN '{date_range[0]}' AND '{date_range[1]}'")
   results = [dict(record) for record in cursor.fetchall()]
   for result in results: result["date"] = result["date"].strftime("%Y-%m-%d")
   return results
+
+def insert_report(record: dict):
+  cursor.execute("INSERT INTO report(company_id, date, link) VALUES(%s, %s, %s)", (record["company_id"], record["date"], record["link"]))
+
+def insert_article(record: dict):
+  cursor.execute("INSERT INTO article(link, title, content) VALUES(%s, %s, %s)", (record["link"], record["title"], record["content"]))
